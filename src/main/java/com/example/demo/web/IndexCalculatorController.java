@@ -26,7 +26,7 @@ public class IndexCalculatorController {
 	@PostMapping("/ticks")
 	public ResponseEntity<?> saveTick(@RequestBody Tick tick) {
 		
-		return indexCalculatorService.trackTrick(tick)
+		 ResponseEntity<Object> orElse = indexCalculatorService.trackTrick(tick)
 			.map(trackedTick -> {
 				try {
 					return ResponseEntity
@@ -36,15 +36,23 @@ public class IndexCalculatorController {
 					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 				}
 			}).orElse(ResponseEntity.noContent().build());
+		 return orElse;
 	}
+	
 	@GetMapping("/statistics")
 	public ResponseEntity<?> getState() {
-		return null;
+		return ResponseEntity
+				.ok()
+				.body(indexCalculatorService.getTimebaseStatistics());
 	}	
 	
 	@GetMapping("/statistics/{instrument_identifier}")
 	public ResponseEntity<?> getProduct(@PathVariable String instrument_identifier) {
-		return null;
-	}
+		return ResponseEntity
+				.ok()
+				.body(indexCalculatorService.getStaticByInstrument(instrument_identifier));
+	}	
+	
+	
 	
 }
