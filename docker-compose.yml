@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  index-calculator:
+    container_name: index-calculator
+    image: index-calculator
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+        mode: "non-blocking"
+        max-buffer-size: "4m"
+    ports:
+      - 8080:8080

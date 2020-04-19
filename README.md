@@ -1,3 +1,32 @@
+<pre><code>
+# find /var/lib/docker/ -name "*.log" -exec ls -sh {} \; | sort -n -r | head -20
+# du -aSh /var/lib/docker/ | sort -n -r | head -n 10
+# watch ls -l 
+/etc/docker/daemon.json
+---short----
+{
+"experimental":true,
+"log-driver": "json-file",
+"log-opts": {
+    "max-size": "10k",
+    "max-file": "3"
+  }
+}
+---long----
+{
+"experimental":true,
+"log-driver": "json-file",
+"log-opts": {
+    "max-size": "10m",
+    "max-file": "3",
+    "labels": "production_status",
+    "env": "os,customer"
+  }
+}
+
+# systemctl restart docker 
+</code></pre>
+
 # index-calculator
 To build project :
 
