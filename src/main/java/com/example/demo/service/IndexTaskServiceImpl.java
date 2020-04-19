@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ import com.example.demo.repository.TickRepository;
 public class IndexTaskServiceImpl implements IndexTaskService{
 	private final TickRepository tickRepository;
 	private final DateTimeComponent dateTimeComponent;
+
+	private final Logger log = LoggerFactory.getLogger(IndexTaskServiceImpl.class);
 	
 	public IndexTaskServiceImpl(TickRepository tickRepository, DateTimeComponent dateTimeComponent) {
 		this.tickRepository = tickRepository;
@@ -56,9 +60,34 @@ public class IndexTaskServiceImpl implements IndexTaskService{
 	}
 	
 	@Override
-	@Scheduled(fixedDelay=10000)
+	@Scheduled(fixedDelay=5000)
 	public void reCalculateStaticJob() {
 		System.out.println("Job running....");
+		log.info(" Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J"
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J  Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+				+ " Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4J Test Log4JTest Log4J Test Log4J Test Log4J Test Log4J Test Log4J "
+		);
 		runStatisticsCalculator();
 	}
 	
