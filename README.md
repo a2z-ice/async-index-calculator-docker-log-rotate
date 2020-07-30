@@ -1,6 +1,10 @@
 <pre><code>
 #Test using curl
-while true; do curl --location --request POST 'http://localhost:8080/ticks' --header 'Content-Type: application/json' --data '{"instrument":"is your otp code","price":33.3,"timestamp":1596097956}';sleep 1; done
+while true; do curl --location --request \
+POST 'http://localhost:8080/ticks' --header 'Content-Type: application/json' \
+--data '{"instrument":"is your otp code","price":33.3,"timestamp":1596097956}'; \
+sleep 1; \
+done
 </code></pre>
 # index-calculator
 To build project :
