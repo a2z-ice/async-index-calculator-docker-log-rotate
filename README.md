@@ -1,4 +1,5 @@
 <pre><code>
+Reference: https://stackoverflow.com/questions/42510002/how-to-clear-the-logs-properly-for-a-docker-container
 docker run --log-driver json-file --log-opt max-size=10m --log-opt max-file=3 ...
 
 # find /var/lib/docker/ -name "*.log" -exec ls -sh {} \; | sort -n -r | head -20
